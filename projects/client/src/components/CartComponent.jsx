@@ -14,8 +14,7 @@ import {
     Button,
     useDisclosure,
     size
-} from '@chakra-ui/react'
-
+} from '@chakra-ui/react';
 
 
 const CartComponent = (props) => {

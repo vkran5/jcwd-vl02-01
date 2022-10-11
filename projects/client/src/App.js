@@ -22,6 +22,7 @@ import ProductListPage from './pages/ProductListPage';
 import PrescriptionPage from './pages/PrescriptionPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
+import TransactionListPage from './pages/TransactionListPage';
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -98,6 +99,7 @@ function App() {
                 <Route path='/prescription' element={<PrescriptionPage />} />
                 <Route path='/cart' element={<CartPage/>}/>
                 <Route path='/checkout' element={<CheckoutPage/>}/>
+                <Route path='/transaction_list' element={<TransactionListPage/>}/>
               </>
               :
               <>
