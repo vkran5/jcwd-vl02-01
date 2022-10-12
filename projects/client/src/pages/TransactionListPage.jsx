@@ -14,10 +14,15 @@ import {
 import SearchBar from "../components/SearchBar";
 import { HiChevronDown } from "react-icons/hi";
 import { FiShoppingBag } from "react-icons/fi";
+import { useState } from "react";
 
 
 
 export default function TransactionListPage() {
+
+    const [filters, setFilters] = useState({invoice: '', transaction_status: '', from: '', to: '', sort: '', order:''});
+
+
 
     return (
         <div className="bg-bgWhite">
@@ -29,9 +34,9 @@ export default function TransactionListPage() {
                     <div className="hidden md:inline">
                         <h1 className="font-medium mb-2">Filter</h1>
                         <hr className="border border-borderHijau my-2 opacity-25 mb-5" />
-                        <RadioGroup>
+                        <RadioGroup onChange={setFilters.transaction_status} value={filters.transaction_status}>
                             <Stack>
-                                <Radio>Awaiting Payment </Radio>
+                                <Radio value={`Awaiting Payment `}>Awaiting Payment </Radio>
                                 <Radio>Awaiting Payment Confirmation </Radio>
                                 <Radio>Processed </Radio>
                                 <Radio>Cancelled </Radio>
