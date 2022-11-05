@@ -113,7 +113,13 @@ export default function TransactionListPage() {
 
     const btnSubmitDateRange = () => {
         if (!dateRange.from || !dateRange.to) {
-            console.log('wrong format');
+            toast({
+                size: 'xs',
+                title: `Please complete your form`,
+                position: 'top',
+                status: 'error',
+                isClosable: true,
+            });
         } else {
             setFilters((prev) => (prev = { ...prev, from: dateRange.from, to: dateRange.to }));
             setCurrentPage(1);

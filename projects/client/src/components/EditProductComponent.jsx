@@ -96,6 +96,7 @@ export default function EditProductComponent({
 							Authorization: `Bearer ${token}`,
 						},
 					});
+
 					if (deleteStock.data.success) {
 						getProductData();
 						toast({
@@ -116,7 +117,26 @@ export default function EditProductComponent({
 					}
 				}
 
-				if (productStock?.length > 0 && !checkedDeleteStock) {
+				// if (productStock?.length > 0 && !checkedDeleteStock) {
+				// 	getProductData();
+				// 	toast({
+				// 		size: 'xs',
+				// 		title: `${selectedProduct} details has been updated! 1`,
+				// 		position: 'top-right',
+				// 		status: 'success',
+				// 		isClosable: true,
+				// 	});
+				// } else {
+				// 	toast({
+				// 		size: 'xs',
+				// 		title: `Failed to update ${selectedProduct}!`,
+				// 		position: 'top-right',
+				// 		status: 'error',
+				// 		isClosable: true,
+				// 	});
+				// }
+
+				if (form.product_stock) {
 					let updateStock = await axios.patch(
 						`${API_URL}/product/update_stock/${productData[selectedProductIndex]?.product_id}`,
 						{
@@ -248,6 +268,10 @@ export default function EditProductComponent({
 	useEffect(() => {
 		getProductData();
 	}, []);
+
+	useEffect(() => {
+		getProductData();
+	}, [form]);
 
 	return (
 		<div>

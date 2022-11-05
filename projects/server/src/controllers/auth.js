@@ -149,7 +149,7 @@ module.exports = {
 				await dbQuery(`SELECT c.cart_id, p.default_unit, c.product_id, p.product_name, p.product_price, p.product_image, s.product_stock, p.product_description, c.is_selected, c.quantity from carts c
             JOIN products p ON p.product_id = c.product_id
             JOIN stock s ON s.product_id = c.product_id
-            WHERE c.user_id = ${resUser[0].user_id};`);
+            WHERE c.user_id = ${resUser[0]?.user_id};`);
 
 			let getAdress = await dbQuery(`Select * from address WHERE user_id = ${dbConf.escape(resUser[0].user_id)};`);
 

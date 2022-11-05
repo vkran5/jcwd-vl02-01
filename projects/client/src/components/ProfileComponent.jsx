@@ -95,7 +95,7 @@ export default function ProfileComponent(props) {
 							onClose();
 						}
 					}
-				} else if (emailMsg === 'Email already used') {
+				} else if (emailMsg === 'Email already exist') {
 					toast({
 						description: 'Email already used',
 						status: 'error',
@@ -138,6 +138,8 @@ export default function ProfileComponent(props) {
 					}
 				}
 			}
+
+      onClose();
 		} catch (error) {
 			console.log(error);
 		}

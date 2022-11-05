@@ -155,6 +155,7 @@ export default function AdminProductPage() {
 								if (result.data.success) {
 									getProductData();
 									displayProductData();
+									setCurrentPage(1);
 									toast({
 										size: 'xs',
 										title: `${selectedProduct} has been deleted from product list!`,
